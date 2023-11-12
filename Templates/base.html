@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ML Prediction Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='int.css')}}" />
+</head>
+<body>
+<div class="container">
+    <h2>ML Prediction Form</h2>
+    <div class="input-group">
+        <label for="CreditScore">Credit Score:</label>
+        <input type="text" id="CreditScore" placeholder="Enter Credit Score">
+    </div>
+    <div class="input-group">
+        <label for="FirstPaymentDate">FirstPaymentDate:</label>
+        <input type="text" id="FirstPaymentDate" placeholder="Enter First Payment Date">
+    </div>
+    <div class="input-group">
+        <label for="FirstTimeHomebuyer">FirstTimeHomebuyer:</label>
+        <input type="text" id="FirstTimeHomebuyer" placeholder="First Time Home buyer?">
+    </div>
+    <div class="input-group">
+        <label for="MaturityDate">MaturityDate:</label>
+        <input type="text" id="MaturityDate" placeholder="Enter Maturity Date">
+    </div>
+    <div class="input-group">
+        <label for="MSA">MSA:</label>
+        <input type="text" id="MSA" placeholder="Enter MSA">
+    </div>
+    <div class="input-group">
+        <label for="MIP">MIP:</label>
+        <input type="text" id="MIP" placeholder="Enter MIP">
+    </div>
+    <div class="input-group">
+        <label for="Units">Units:</label>
+        <input type="text" id="Units" placeholder="Enter Units">
+    </div>
+    <div class="input-group">
+        <label for="Occupancy">Occupancy:</label>
+        <input type="text" id="Occupancy" placeholder="Enter Occupancy">
+    </div>
+    <div class="input-group">
+        <label for="OCLTV">OCLTV:</label>
+        <input type="text" id="OCLTV" placeholder="Enter OCLTV">
+    </div>
+    <div class="input-group">
+        <label for="DTI">DTI:</label>
+        <input type="text" id="DTI" placeholder="Enter DTI">
+    </div>
+    <div class="input-group">
+        <label for="OrigUPB">OrigUPB:</label>
+        <input type="text" id="OrigUPB" placeholder="Enter OrigUPB">
+    </div>
+    <div class="input-group">
+        <label for="LTV">LTV:</label>
+        <input type="text" id="LTV" placeholder="Enter LTV">
+    </div>
+    <div class="input-group">
+        <label for="OrigInterestRate">OrigInterestRate:</label>
+        <input type="text" id="OrigInterestRate" placeholder="Enter OrigInterestRate">
+    </div>
+    <div class="input-group">
+        <label for="Channel">Channel:</label>
+        <input type="text" id="Channel" placeholder="Enter Channel">
+    </div>
+    <div class="input-group">
+        <label for="PPM">PPM:</label>
+        <input type="text" id="PPM" placeholder="Enter PPM">
+    </div>
+    <div class="input-group">
+        <label for="ProductType">ProductType:</label>
+        <input type="text" id="ProductType" placeholder="Enter ProductType">
+    </div>
+    <div class="input-group">
+        <label for="PropertyState">PropertyState:</label>
+        <input type="text" id="PropertyState" placeholder="Enter PropertyState">
+    </div>
+    <div class="input-group">
+        <label for="PropertyType">PropertyType:</label>
+        <input type="text" id="PropertyType" placeholder="Enter PropertyType">
+    </div>
+    <div class="input-group">
+        <label for="PostalCode">PostalCode:</label>
+        <input type="text" id="PostalCode" placeholder="Enter PostalCode">
+    </div>
+    <div class="input-group">
+        <label for="LoanSeqNum">LoanSeqNum:</label>
+        <input type="text" id="LoanSeqNum" placeholder="Enter LoanSeqNum">
+    </div>
+    <div class="input-group">
+        <label for="LoanPurpose">LoanPurpose:</label>
+        <input type="text" id="LoanPurpose" placeholder="Enter LoanPurpose">
+    </div>
+    <div class="input-group">
+        <label for="OrigLoanTerm">OrigLoanTerm:</label>
+        <input type="text" id="OrigLoanTerm" placeholder="Enter OrigLoanTerm">
+    </div>
+    <div class="input-group">
+        <label for="NumBorrowers">NumBorrowers:</label>
+        <input type="text" id="NumBorrowers" placeholder="Enter NumBorrowers">
+    </div>
+    <div class="input-group">
+        <label for="SellerName">SellerName:</label>
+        <input type="text" id="SellerName" placeholder="Enter SellerName">
+    </div>
+    <div class="input-group">
+        <label for="ServicerName">ServicerName:</label>
+        <input type="text" id="ServicerName" placeholder="Enter ServicerName">
+    </div>
+    <div class="input-group">
+        <label for="MonthsDelinquent">MonthsDelinquent:</label>
+        <input type="text" id="MonthsDelinquent" placeholder="Enter MonthsDelinquent">
+    </div>
+    <div class="input-group">
+        <label for="MonthsInRepayment">MonthsInRepayment:</label>
+        <input type="text" id="MonthsInRepayment" placeholder="Enter MonthsInRepayment">
+    </div>
+    <button id="ClassificationModelPredict" onclick="sendDataAndPredict()">Classification Model Predict</button>
+    <button id="RegressionModelPredict" onclick="sendRegressorPredict()">Regression Model Predict</button>
+    <p id="prediction">Your <span id="predicted-value"></span></p>
+</div>
+
+<script>
+
+
+    function sendDataAndPredict() {
+        const inputVariables = {
+        CreditScore: parseInt(document.getElementById("CreditScore").value),
+        FirstPaymentDate: parseInt(document.getElementById("FirstPaymentDate").value),
+        FirstTimeHomebuyer: document.getElementById("FirstTimeHomebuyer").value,
+        MaturityDate: parseInt(document.getElementById("MaturityDate").value),
+        MSA: document.getElementById("MSA").value,
+        MIP: parseInt(document.getElementById("MIP").value),
+        Units: parseInt(document.getElementById("Units").value),
+        Occupancy: document.getElementById("Occupancy").value,
+        OCLTV: parseInt(document.getElementById("OCLTV").value),
+        DTI: parseInt(document.getElementById("DTI").value),
+        OrigUPB: parseInt(document.getElementById("OrigUPB").value),
+        LTV: parseInt(document.getElementById("LTV").value),
+        OrigInterestRate: parseFloat(document.getElementById("OrigInterestRate").value),
+        Channel: document.getElementById("Channel").value,
+        PPM: document.getElementById("PPM").value,
+        ProductType: document.getElementById("ProductType").value,
+        PropertyState: document.getElementById("PropertyState").value,
+        PropertyType: document.getElementById("PropertyType").value,
+        PostalCode: document.getElementById("PostalCode").value,
+        LoanSeqNum: document.getElementById("LoanSeqNum").value,
+        LoanPurpose: document.getElementById("LoanPurpose").value,
+        OrigLoanTerm: parseInt(document.getElementById("OrigLoanTerm").value),
+        NumBorrowers: document.getElementById("NumBorrowers").value,
+        SellerName: document.getElementById("SellerName").value,
+        ServicerName: document.getElementById("ServicerName").value,
+        MonthsDelinquent: parseInt(document.getElementById("MonthsDelinquent").value),
+        MonthsInRepayment: parseInt(document.getElementById("MonthsInRepayment").value),
+        };
+
+        fetch('/predict', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(inputVariables),
+        })
+        .then(response => response.json())
+        .then(data => {
+            const prediction = data.prediction;
+            document.getElementById("predicted-value").textContent = `Ever Delinquent: ${prediction}`;
+            document.getElementById("prediction").style.display = "block";
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    function sendRegressorPredict() {
+        const inputVariables = {
+        CreditScore: parseInt(document.getElementById("CreditScore").value),
+        FirstPaymentDate: parseInt(document.getElementById("FirstPaymentDate").value),
+        FirstTimeHomebuyer: document.getElementById("FirstTimeHomebuyer").value,
+        MaturityDate: parseInt(document.getElementById("MaturityDate").value),
+        MSA: document.getElementById("MSA").value,
+        MIP: parseInt(document.getElementById("MIP").value),
+        Units: parseInt(document.getElementById("Units").value),
+        Occupancy: document.getElementById("Occupancy").value,
+        OCLTV: parseInt(document.getElementById("OCLTV").value),
+        DTI: parseInt(document.getElementById("DTI").value),
+        OrigUPB: parseInt(document.getElementById("OrigUPB").value),
+        LTV: parseInt(document.getElementById("LTV").value),
+        OrigInterestRate: parseFloat(document.getElementById("OrigInterestRate").value),
+        Channel: document.getElementById("Channel").value,
+        PPM: document.getElementById("PPM").value,
+        ProductType: document.getElementById("ProductType").value,
+        PropertyState: document.getElementById("PropertyState").value,
+        PropertyType: document.getElementById("PropertyType").value,
+        PostalCode: document.getElementById("PostalCode").value,
+        LoanSeqNum: document.getElementById("LoanSeqNum").value,
+        LoanPurpose: document.getElementById("LoanPurpose").value,
+        OrigLoanTerm: parseInt(document.getElementById("OrigLoanTerm").value),
+        NumBorrowers: document.getElementById("NumBorrowers").value,
+        SellerName: document.getElementById("SellerName").value,
+        ServicerName: document.getElementById("ServicerName").value,
+        MonthsDelinquent: parseInt(document.getElementById("MonthsDelinquent").value),
+        MonthsInRepayment: parseInt(document.getElementById("MonthsInRepayment").value),
+        };
+
+        fetch('/predict_regressor', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(inputVariables),
+        })
+        .then(response => response.json())
+        .then(data => {
+            const prediction = data.prediction;
+            document.getElementById("predicted-value").textContent = `PPR Value: ${prediction}`;
+            document.getElementById("prediction").style.display = "block";
+        })
+        .catch(error => console.error('Error:', error));
+    }
+</script>
+</body>
+</html>
