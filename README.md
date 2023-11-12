@@ -60,7 +60,7 @@ ________________________________________________________________________________
 
 ## Acknowledgments
 
-This project is the result of my internship at [**Technocolabs Software**]([[https://www.technolabssoftware.com/](https://github.com/Technocolabs100)](https://www.linkedin.com/company/technocolabs/)). I had the privilege of working alongside the talented professionals at TechnoLabs, where I gained valuable insights and mentorship.
+This project is the result of my internship at [**Technocolabs Software**]([[https://www.technolabssoftware.com/](https://github.com/Technocolabs100)](https://www.linkedin.com/company/technocolabs/)). I had the privilege of working alongside the talented professionals at Technocolabs, where I gained valuable insights and mentorship.
 
 
 
