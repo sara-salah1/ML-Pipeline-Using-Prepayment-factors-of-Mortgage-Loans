@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #BFD7ED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 500px;
+    background-color: rgba(96, 163, 217, 0.9);
+    padding: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    transition: background-color 0.3s;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.container:hover {
+    background-color: #4789C3;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#prediction {
+    display: none;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#ClassificationModelPredict, #RegressionModelPredict{
+    display: block;
+    margin: 10px auto;
+    background-color: #0074B7;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 300px;
+}
+
+#ClassificationModelPredict:hover, #RegressionModelPredict:hover {
+    background-color: #003B73;
+}
