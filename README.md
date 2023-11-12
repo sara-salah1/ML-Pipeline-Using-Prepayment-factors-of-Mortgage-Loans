@@ -19,7 +19,7 @@ The primary goal of this project is to offer users a user-friendly platform for 
 ## How to Use
 
 1. **Input Data:**
-   - Fill in the required details on the HTML page. This may include mortgage amount, interest rate, borrower's credit score, and other relevant information.
+   - Fill in the required details on the HTML page. This include mortgage amount, interest rate, borrower's credit score, and other relevant information.
 
 2. **Ever Delinquent Classification:**
    - Click the "Classification Model" button to receive a prediction on whether the mortgage is likely to become delinquent.
@@ -51,14 +51,21 @@ ________________________________________________________________________________
 ![4](https://github.com/sara-salah1/ML-Pipeline-Using-Prepayment-factors-of-Mortgage-Loans/assets/67710906/93df7e22-a76b-465e-915c-a19abed822f4)
 
 
+![5](https://github.com/sara-salah1/ML-Pipeline-Using-Prepayment-factors-of-Mortgage-Loans/assets/67710906/6a75103c-96e6-446f-9c53-b8f0b23c4024)
 
 
 
 ______________________________________________________________________________________________________________________________________________________________________________
 
 
+## Acknowledgments
+
+This project is the result of my internship at [Technocolabs Software]([https://www.technolabssoftware.com/](https://github.com/Technocolabs100)). I had the privilege of working alongside the talented professionals at TechnoLabs, where I gained valuable insights and mentorship.
+
+
+
 ## Author
-The ModelEval GUI has been built by **Sara Salah**
+The ML-Pipeline-Using-Prepayment-factors-of-Mortgage-Loans has been built by **Sara Salah**
 
 
 
